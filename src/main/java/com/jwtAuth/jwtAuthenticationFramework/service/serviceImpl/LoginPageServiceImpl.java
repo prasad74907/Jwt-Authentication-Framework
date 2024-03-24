@@ -67,8 +67,7 @@ public class LoginPageServiceImpl implements LoginPageService {
 	public String userSignUp(UserSignUpDTO userSignUpDTO) {
 
 		User user = User.builder().firstName(userSignUpDTO.getFirstName()).lastName(userSignUpDTO.getLastName())
-				.email(userSignUpDTO.getEmail()).passWord(passwordEncoder.encode(userSignUpDTO.getPassWord()))
-				.confirmPassWord(passwordEncoder.encode(userSignUpDTO.getConfirmPassword())).build();
+				.email(userSignUpDTO.getEmail()).passWord(passwordEncoder.encode(userSignUpDTO.getPassWord())).build();
 
 		return userRepository.save(user) != null ? "User SignUp Successful" : "User SignUp UnSuccessful";
 	}

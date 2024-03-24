@@ -45,8 +45,6 @@ public class User implements UserDetails {
 	private String email;
 	@Column(unique = true)
 	private String passWord;
-	@Column(name = "confirm_password")
-	private String confirmPassWord;
 	@JsonManagedReference("user_token")
 	@OneToMany(targetEntity = Token.class, mappedBy = "user")
 	@Column(name = "access_token")
